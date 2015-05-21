@@ -19,7 +19,7 @@ node\
 |   |
 |   |-- run                # startup executable
 |
-|-- settings.yml           # 
+|-- manifest.yml           # cloud foundry manifest file
 |-- runtime.txt            # (optional) version of python to instal
 |-- requirements.txt       # (optional) other extra-python-dependencies to install
 `````
