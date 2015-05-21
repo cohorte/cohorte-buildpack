@@ -7,17 +7,17 @@ This buildpack should be used if you want to deploy a Cohorte Node on Cloud Foun
 cf push my_node -b https://github.com/cohorte/cohorte-buildpack.git
 ````
 
-Your Cohorte  Node *my_node* should have one directory which contains node's artifacts :
+Your Cohorte  Node should have one directory *node* which contains your Cohorte node's artifacts :
 
 `````
-my_node\
-|      |
-|      |-- repo\              # your application bundles
-|      |-- conf\              # configuration folder
-|      |       | 
-|      |       --- run.js     # startup configuration
-|      |
-|      |-- run                # startup executable
+node\
+|   |
+|   |-- repo\              # your application bundles
+|   |-- conf\              # configuration folder
+|   |       | 
+|   |       --- run.js     # startup configuration
+|   |
+|   |-- run                # startup executable
 |
 |-- runtime.txt               # (optional) version of python to instal
 |-- requirements.txt          # (optional) other extra-python-dependencies to install
