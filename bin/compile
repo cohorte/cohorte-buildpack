@@ -34,11 +34,11 @@ CACHED_DIRS=".heroku"
 
 # Static configurations for virtualenv caches.
 VIRTUALENV_LOC=".heroku/venv"
-LEGACY_TRIGGER="lib/python2.7"
+LEGACY_TRIGGER="lib/python3.4"
 PROFILE_PATH="$BUILD_DIR/.profile.d/python.sh"
 WEBCONCURRENCY_PROFILE_PATH="$BUILD_DIR/.profile.d/python.webconcurrency.sh"
 
-DEFAULT_PYTHON_VERSION="python-2.7.9"
+DEFAULT_PYTHON_VERSION="python-3.4.0"
 DEFAULT_PYTHON_STACK="cedar"
 PYTHON_EXE="/app/.heroku/python/bin/python"
 PIP_VERSION="6.1.1"
