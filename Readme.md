@@ -11,15 +11,15 @@ Your Cohorte  Node *my_node* should have one directory which contains node's art
 
 `````
 my_node\
-       |
-       --- repo\              # your application bundles
-       --- conf\              # configuration folder
-               | 
-               --- run.js     # startup configuration
-       |
-       --- run                # startup executable
-       --- runtime.txt        # (optional) version of python to instal
-       --- requirements.txt   # (optional) other extra-python-dependencies to install
+|      |
+|      |-- repo\              # your application bundles
+|      |-- conf\              # configuration folder
+|      |       | 
+|      |       --- run.js     # startup configuration
+|      |
+|      |-- run                # startup executable
+|-- runtime.txt        # (optional) version of python to instal
+|-- requirements.txt   # (optional) other extra-python-dependencies to install
 `````
 
 *run.js* startup configuration file should specify Cohorte's runtime version to be installed (if not specified, the latest version is used).
