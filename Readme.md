@@ -18,6 +18,7 @@ my_node\
 |      |       --- run.js     # startup configuration
 |      |
 |      |-- run                # startup executable
+|
 |-- runtime.txt               # (optional) version of python to instal
 |-- requirements.txt          # (optional) other extra-python-dependencies to install
 `````
