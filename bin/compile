@@ -250,3 +250,6 @@ bpwatch stop anvil_appdir_commit
 bpwatch stop compile
 
 rm -rf $TMP_ROOT
+
+# install cohorte
+source $BIN_DIR/compile_cohorte
