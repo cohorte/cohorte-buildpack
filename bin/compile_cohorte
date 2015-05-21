@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
-# bin/detect <build-dir>
+# bin/compile <build-dir> <cache-dir> <env-dir>
 # example: https://github.com/cloudfoundry/nodejs-buildpack/blob/master/bin/compile
 
 # download dependencies, configure environment, tweakfiles, etc..
 # at the end, the build folder will be transformed to a droplet tarball.
 
-set -e            # fail fast
-set -o pipefail   # don't ignore exit codes when piping output
 # set -x          # enable debugging
-
-bp_version="1"
 
 build_dir=$1	  # A build folder will contain all the necessary assets to get an application running.
 				  # At the end of compile process, this folder is archived to a droplet tarball, 
