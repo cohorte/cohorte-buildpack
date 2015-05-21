@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+# example: https://github.com/cloudfoundry/nodejs-buildpack/blob/master/bin/compile
+
+# download dependencies, configure environment, tweakfiles, etc..
+# at the end, the build folder will be transformed to a droplet tarball.
+
+set -e            # fail fast
+set -o pipefail   # don't ignore exit codes when piping output
+# set -x          # enable debugging
+
+bp_version="1"
+
+build_dir=$1	  # A build folder will contain all the necessary assets to get an application running.
+				  # At the end of compile process, this folder is archived to a droplet tarball, 
+				  # which travels to a blobstore.
+
+cache_dir=$2	  # used to store all the intermediate data that is necessary to compile an app, 
+				  # such as a source code or object files.
+
+env_dir=$3		  # not used here
+bp_dir=$(cd $(dirname $0); cd ..; pwd)		# buildpack folder
+
+# make cohorte distribution folder
+dist_dir=$build_dir/dist
+mkdir -p $dist_dir
+
+# CF Common
+BUILDPACK_PATH=$bp_dir
+export BUILDPACK_PATH
+source $bp_dir/compile-extensions/lib/common
+# END CF Common
+
+source $bp_dir/bin/common.sh
+
+status "Installing Cohorte."
+# download cohorte-distribution
+# TODO: should check which Cohorte distribution to download!
+COHORTE_LINUX_DISTRIBUTION=http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz
+status "Downloading Cohorte distribution..."
+cd $dist_dir
+curl --silent --location $COHORTE_LINUX_DISTRIBUTION | tar -x $dist_dir #-zO /tmp/cohorte
+dist_file=$(ls -l | tr " " "\n" | grep cohorte)
+mv $dist_file cohorte
+
+
+status "Building runtime environment"
+# COHORTE_HOME env variable
+COHORTE_HOME=$dist_dir/cohorte
+status "COHORTE_HOME=$COHORTE_HOME"
+# Update the PATH
+mkdir -p $build_dir/.profile.d
+echo "export PATH=\"\$HOME/dist/cohorte/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/cohorte.sh
+echo "export COHORTE_HOME=\"\$HOME/dist/cohorte\";" >> $build_dir/.profile.d/cohorte.sh
