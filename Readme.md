@@ -25,10 +25,6 @@ my_node\
 
 *run.js* startup configuration file should specify Cohorte's runtime version to be installed (if not specified, the latest version is used).
 
-If $runtime.txt* file is present, the specified Python version will be installed. Otherwise, this buildpack installs Python 3.4.0 by default.
-
-If requirements.txt is present, this buildpack installs the specified dependencies.
-
 `````
 { 
   "cohorte-version" : "1.0.0",
@@ -37,3 +33,9 @@ If requirements.txt is present, this buildpack installs the specified dependenci
   ...
 }
 ````
+
+If *runtime.txt* file is present, the specified Python version will be installed. Otherwise, this buildpack installs Python 3.4.0 by default.
+
+If *requirements.txt* is present, this buildpack installs the specified dependencies.
+
+
