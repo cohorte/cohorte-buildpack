@@ -43,11 +43,11 @@ mv $dist_file cohorte
 
 
 status "Building runtime environment"
-# COHORTE_HOME env variable
-COHORTE_HOME=$dist_dir/cohorte
-status "COHORTE_HOME=$COHORTE_HOME"
 # Update the PATH
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/dist/cohorte/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/cohorte.sh
 echo "export COHORTE_HOME=\"\$HOME/dist/cohorte\";" >> $build_dir/.profile.d/cohorte.sh
 echo "export COHORTE_BASE=\"\$HOME/node\";" >> $build_dir/.profile.d/cohorte.sh
+status "COHORTE_HOME=\"\$HOME/dist/cohorte\""
+status "COHORTE_BASE=\"\$HOME/node\""
+status "End installing Cohorte"
