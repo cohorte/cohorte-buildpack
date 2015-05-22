@@ -29,6 +29,8 @@ source $bp_dir/compile-extensions/lib/common
 
 source $bp_dir/bin/common.sh
 
+COHORTE_BASE=$build_dir/node
+
 status "Installing Cohorte."
 # download cohorte-distribution
 # TODO: should check which Cohorte distribution to download!
@@ -48,3 +50,4 @@ status "COHORTE_HOME=$COHORTE_HOME"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/dist/cohorte/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/cohorte.sh
 echo "export COHORTE_HOME=\"\$HOME/dist/cohorte\";" >> $build_dir/.profile.d/cohorte.sh
+echo "export COHORTE_BASE=\"\$HOME/node\";" >> $build_dir/.profile.d/cohorte.sh

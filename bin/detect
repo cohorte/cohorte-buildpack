@@ -4,10 +4,11 @@
 build_dir=$1
 
 # detects if run.js exists
-find $build_dir -name run.js
-found=$?
+#find $build_dir -name run.js
+#found=$?
  
-if [ $found -eq 0 ]; then
+#if [ $found -eq 0 ]; then
+if [ -f $build_dir/node/run.js ]; then
   echo "Cohorte" && exit 0
 else
   echo "no" && exit 1
