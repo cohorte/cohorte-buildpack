@@ -37,7 +37,7 @@ status "Installing Cohorte."
 COHORTE_LINUX_DISTRIBUTION=http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz
 status "Downloading Cohorte distribution..."
 cd $dist_dir
-curl --silent --location $COHORTE_LINUX_DISTRIBUTION | tar -xz $dist_dir #-zO /tmp/cohorte
+curl --silent --location $COHORTE_LINUX_DISTRIBUTION | tar -xz #- O $dist_dir #-zO /tmp/cohorte
 dist_file=$(ls -l | tr " " "\n" | grep cohorte)
 mv $dist_file cohorte
 
