@@ -5,7 +5,7 @@
 # download dependencies, configure environment, tweakfiles, etc..
 # at the end, the build folder will be transformed to a droplet tarball.
 
-# set -x          # enable debugging
+set -x            # enable debugging
 
 build_dir=$1	  # A build folder will contain all the necessary assets to get an application running.
 				  # At the end of compile process, this folder is archived to a droplet tarball, 
