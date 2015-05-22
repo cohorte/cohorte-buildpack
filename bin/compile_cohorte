@@ -14,7 +14,7 @@ build_dir=$1	  # A build folder will contain all the necessary assets to get an 
 cache_dir=$2	  # used to store all the intermediate data that is necessary to compile an app, 
 				  # such as a source code or object files.
 
-env_dir=$3		  # not used here
+#env_dir=$3		  # not used here
 bp_dir=$(cd $(dirname $0); cd ..; pwd)		# buildpack folder
 
 # make cohorte distribution folder
