@@ -250,7 +250,7 @@ bpwatch stop anvil_appdir_commit
 
 # install cohorte
 ########################################
-source $BIN_DIR/compile_cohorte $1 $2 $3
+source $BIN_DIR/compile_cohorte $1 $2
 ########################################
 
 bpwatch stop compile
