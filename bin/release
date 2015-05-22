@@ -7,5 +7,4 @@ cat << EOF
 addons: []
 config_vars: []
 default_process_types:
-  web: bash $COHORTE_BASE/run --use-config $COHORTE_BASE/run.js --web-admin \$PORT
 EOF
