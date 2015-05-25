@@ -34,7 +34,7 @@ COHORTE_BASE=$build_dir/node
 status "Installing Cohorte."
 # download cohorte-distribution
 # TODO: should check which Cohorte distribution to download!
-COHORTE_PYTHON_DISTRIBUTION=http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150525.134756-24-python-distribution.tar.gz
+COHORTE_PYTHON_DISTRIBUTION=http://repo.isandlatech.com/maven/snapshots/org/cohorte/platforms/cohorte/1.0.1-SNAPSHOT/cohorte-1.0.1-20150525.135620-25-python-distribution.tar.gz
 #COHORTE_LINUX_DISTRIBUTION=http://repo.isandlatech.com/maven/releases/org/cohorte/platforms/cohorte/1.0.0/cohorte-1.0.0-linux-distribution.tar.gz
 status "Downloading Cohorte distribution..."
 cd $dist_dir
