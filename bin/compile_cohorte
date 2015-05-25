@@ -46,7 +46,7 @@ cp $dist_file_toinstall $dist_dir
 
 cd $dist_dir
 
-tar -xz $dist_file_toinstall
+tar -xzf $dist_file_toinstall
 rm $dist_file_toinstall
 
 dist_file=$(ls -l | tr " " "\n" | grep cohorte)
